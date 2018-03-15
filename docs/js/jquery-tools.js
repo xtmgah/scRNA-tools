@@ -56,9 +56,19 @@ $(document).ready(function () {
               return obj2.Citations - obj1.Citations
             })
             break
+          case 'refs':
+            data.sort(function(obj1, obj2) {
+              return (obj2.Publications + obj2.Preprints) - (obj1.Publications + obj1.Preprints)
+            })
+            break
           case 'pubs':
             data.sort(function(obj1, obj2) {
-              return obj2.Refs.length - obj1.Refs.length
+              return obj2.Publications - obj1.Publications
+            })
+            break
+          case 'pres':
+            data.sort(function(obj1, obj2) {
+              return obj2.Preprints - obj1.Preprints
             })
             break
           case 'added':
